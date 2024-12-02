@@ -1,0 +1,97 @@
+0-shell:
+    Core Functionality:
+        ☐ Create a basic shell interface that displays a `$` prompt
+        ☐ Implement command parsing and execution
+        ☐ Handle command-line input and validation
+        ☐ Manage process creation and synchronization
+
+    Command Implementations (from scratch):
+        ☐ `echo`: Print text to standard output
+        ☐ `cd`: Change current directory
+        ☐ `ls`: List directory contents
+        - Support flags: `-l` (long format)
+        - Support flags: `-a` (show hidden files)
+        - Support flags: `-F` (mark file types)
+        ☐ `pwd`: Print current working directory
+        ☐ `cat`: Read and display file contents
+        ☐ `cp`: Copy files
+        ☐ `rm`: Remove files
+        - Support flag: `-r` (recursive removal)
+        ☐ `mv`: Move/rename files
+        ☐ `mkdir`: Create directories
+        ☐ `exit`: Terminate the shell
+
+    Error Handling:
+        ☐ Implement robust error messages
+        ☐ Handle command not found scenarios
+        ☐ Manage `Ctrl + D` program interruption
+
+    Scripting Tasks (Second Stage):
+        Script Execution:
+            ☐ Develop script parsing mechanism
+            ☐ Support running external shell scripts
+            ☐ Implement script interpreter within the shell
+            ☐ Create a `create-dir.sh` script
+
+            **Script Capabilities:**
+            ☐ Support `for` loops
+            ☐ Support function definitions
+            ☐ Variable manipulation
+            ☐ Basic control flow structures
+
+    Job Control Tasks (Third Stage):
+        Built-in Commands:
+            ☐ Implement `jobs` command
+            ☐ Implement `bg` (background) command
+            ☐ Implement `fg` (foreground) command
+            ☐ Implement `kill` command
+
+        Process Management:
+            ☐ Background job execution support
+            ☐ Job tracking and listing
+            ☐ Process signal handling
+            ☐ Handle `Ctrl + Z` job suspension
+
+    ### Additional Considerations
+        Rust-Specific Implementation:
+            - Use Rust's strong type system
+            - Leverage `std::process` for process management
+            - Utilize `std::fs` for file operations
+            - Implement error handling with `Result` and `Option` types
+            - Use low-level system calls via `nix` or `libc` crates for advanced functionality
+
+    Bonus Features (Optional):
+        ☐ Implement using exclusively low-level system calls
+        ☐ Handle `Ctrl + C` interruption
+        ☐ Add autocompletion
+        ☐ Implement piping
+        ☐ Add input/output redirection
+        ☐ Display current path in prompt
+        ☐ Add color support for directories/errors
+
+    ### Recommended Rust Crates
+        - `nix`: Low-level Unix system calls
+        - `libc`: C standard library bindings
+        - `rustyline`: Command-line editing
+        - `colored`: Terminal color support
+        - `parse-cli`: Command-line argument parsing
+
+
+    ### Suggested Project Structure
+    ```
+    0-shell/
+    ├── Cargo.toml
+    ├── src/
+    │   ├── main.rs         # Entry point
+    │   ├── shell.rs        # Core shell logic
+    │   ├── commands/       # Individual command implementations
+    │   │   ├── mod.rs
+    │   │   ├── echo.rs
+    │   │   ├── cd.rs
+    │   │   └── ...
+    │   ├── parser/         # Command and script parsing
+    │   ├── job_control/    # Job management
+    │   └── utils/          # Helper utilities
+    └── scripts/            # Shell scripts
+        └── create-dir.sh
+    ```

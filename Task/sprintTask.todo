@@ -1,0 +1,52 @@
+    ### Personne A : Fondamentaux du Shell et Parsing
+    - Conception de la structure de base du projet
+    - Implémentation du mécanisme de prompt et de lecture des commandes
+    - Développement du parseur de commandes
+    - Gestion des erreurs et des interruptions (`Ctrl + D`)
+    - Création du squelette pour l'exécution des commandes
+    
+    ### Personne B : Implémentation des Commandes de Base
+    - Implémentation des commandes système simples :
+      - `echo`
+      - `pwd`
+      - `cd`
+      - `mkdir`
+      - `exit`
+    - Gestion des drapeaux et des arguments pour ces commandes
+    - Structure de tests unitaires pour les commandes
+    
+    ### Personne C : Gestion des Fichiers et Systèmes
+    - Implémentation des commandes de manipulation de fichiers :
+      - `ls` (avec ses drapeaux `-l`, `-a`, `-F`)
+      - `cat`
+      - `cp`
+      - `rm` (avec drapeau `-r`)
+      - `mv`
+    - Développement de la logique de gestion des fichiers et répertoires
+    - Gestion des erreurs spécifiques aux opérations sur fichiers
+    
+    ### Points Clés de la Répartition :
+    1. Aucune tâche n'est bloquante pour les autres
+    2. Chaque personne travaille sur un domaine distinct
+    3. Les compétences acquises sont complémentaires
+    4. Possibilité de travailler en parallèle
+    5. Chacun développe une expertise différente
+    
+    
+    ### Sprint Planning
+    **Manche 1 (2 jours)** :
+    - A : Structure de projet et mécanisme de base
+    - B : Commandes simples de base
+    - C : Préparation de l'infrastructure pour les commandes de fichiers
+    
+    **Manche 2 (2 jours)** :
+    - A : Finalisation du parseur et de la gestion des erreurs
+    - B : Complétion et tests des commandes de base
+    - C : Implémentation complète des commandes de fichiers
+    
+    Cette approche permet à chaque membre :
+    - De travailler de manière indépendante
+    - D'acquérir une compréhension profonde d'un aspect du projet
+    - De contribuer significativement à l'ensemble du projet
+    
+    Voulez-vous que je détaille davantage un aspect particulier de cette répartition ?
