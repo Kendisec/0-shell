@@ -37,7 +37,7 @@
 **Tâche 3 : Implémenter les commandes simples (`echo`, `ls`, `cat`)**
 - **Objectif** : Implémenter des commandes de base.
 - **Étapes** :
-  ☐ Créer la commande `echo` pour afficher un texte.
+  ✔ Créer la commande `echo` pour afficher un texte. @done(24-12-03 22:53)
   ☐ Créer la commande `ls` pour lister les fichiers du répertoire actuel.
   ☐ Implémenter `cat` pour afficher le contenu des fichiers.
   ☐ Tester chaque commande.
