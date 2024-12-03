@@ -5,9 +5,9 @@
 **Tâche 1 : Créer la structure de base du shell**
 - **Objectif** : Créer les fichiers principaux du shell (`main.rs`, `prompt.rs`, `interpreter.rs`, `executor.rs`, etc.).
 - **Étapes** :
-  ☐ Créer la structure de base du projet Rust.
-  ☐ Mettre en place un fichier `main.rs` qui appelle les autres modules.
-  ☐ Créer le fichier `prompt.rs` pour afficher le prompt du shell.
+  ✔ Créer la structure de base du projet Rust. @done(24-12-03 16:22)
+  ✔ Mettre en place un fichier `main.rs` qui appelle les autres modules. @done(24-12-03 16:22)
+  ✔ Créer le fichier `prompt.rs` pour afficher le prompt du shell. @done(24-12-03 16:22)
 
 - `Learning Focus` : 
   ☐ Comprendre la structure d'un projet Rust.
