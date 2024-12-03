@@ -1,11 +1,11 @@
-    ### Personne A : Fondamentaux du Shell et Parsing
+    ### Babs : Fondamentaux du Shell et Parsing
     - Conception de la structure de base du projet
     - Implémentation du mécanisme de prompt et de lecture des commandes
     - Développement du parseur de commandes
     - Gestion des erreurs et des interruptions (`Ctrl + D`)
     - Création du squelette pour l'exécution des commandes
     
-    ### Personne B : Implémentation des Commandes de Base
+    ### Kendi : Implémentation des Commandes de Base
     - Implémentation des commandes système simples :
       - `echo`
       - `pwd`
@@ -15,7 +15,7 @@
     - Gestion des drapeaux et des arguments pour ces commandes
     - Structure de tests unitaires pour les commandes
     
-    ### Personne C : Gestion des Fichiers et Systèmes
+    ### Gaby : Gestion des Fichiers et Systèmes
     - Implémentation des commandes de manipulation de fichiers :
       - `ls` (avec ses drapeaux `-l`, `-a`, `-F`)
       - `cat`
