@@ -9,4 +9,4 @@ push:
 r: 
 	clear && cargo r
 merge:
-	git checkout $(TO) && git merge $(FROM)
+	git checkout $(TO) && git merge $(FROM) 
