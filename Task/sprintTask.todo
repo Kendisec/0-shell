@@ -1,4 +1,213 @@
-    ### Babs : Fondamentaux du Shell et Parsing
+### `**Sprint 1 : Mise en place du Shell de base**`
+
+### `**Objectif :**` Créer une version de base du shell capable de lancer des commandes simples.
+@Babs  
+**Tâche 1 : Créer la structure de base du shell**
+- **Objectif** : Créer les fichiers principaux du shell (`main.rs`, `prompt.rs`, `interpreter.rs`, `executor.rs`, etc.).
+- **Étapes** :
+  ☐ Créer la structure de base du projet Rust.
+  ☐ Mettre en place un fichier `main.rs` qui appelle les autres modules.
+  ☐ Créer le fichier `prompt.rs` pour afficher le prompt du shell.
+
+- `Learning Focus` : 
+  ☐ Comprendre la structure d'un projet Rust.
+  ☐ Implémentation d'un simple shell.
+  
+- **Ressources** : 
+  - [Rust documentation](https://doc.rust-lang.org/book/)
+
+
+@Kendi  
+**Tâche 2 : Implémenter la commande `cd` et `pwd`**
+- **Objectif** : Ajouter les commandes de navigation dans le système de fichiers.
+- **Étapes** :
+  ☐ Créer une fonction pour `cd` qui change de répertoire.
+  ☐ Créer une fonction pour `pwd` qui affiche le répertoire courant.
+  ☐ Tester les deux commandes.
+
+- `Learning Focus` : 
+  - Manipuler les répertoires dans Rust.
+  - Utiliser la bibliothèque `std::env` pour gérer les répertoires.
+
+- **Ressources** :
+  - [Rust std::env documentation](https://doc.rust-lang.org/std/env/)
+  - [Rust Path manipulation](https://doc.rust-lang.org/std/path/)
+
+@Gaby  
+**Tâche 3 : Implémenter les commandes simples (`echo`, `ls`, `cat`)**
+- **Objectif** : Implémenter des commandes de base.
+- **Étapes** :
+  ☐ Créer la commande `echo` pour afficher un texte.
+  ☐ Créer la commande `ls` pour lister les fichiers du répertoire actuel.
+  ☐ Implémenter `cat` pour afficher le contenu des fichiers.
+  ☐ Tester chaque commande.
+
+- `Learning Focus` : 
+  - Apprendre à manipuler les entrées/sorties (I/O) en Rust.
+  - Manipuler les fichiers et afficher leur contenu.
+
+- **Ressources** :
+  - [Rust std::fs documentation](https://doc.rust-lang.org/std/fs/)
+  - [Rust File I/O](https://doc.rust-lang.org/book/ch12-00-growing-a-project.html)
+
+---
+
+### `Sprint 2 : Amélioration des fonctionnalités et gestion des erreurs`
+
+#### `Objectif :` Étendre les fonctionnalités du shell et améliorer la gestion des erreurs.
+
+@Babs  
+**Tâche 1 : Ajouter la gestion des erreurs pour les commandes**
+- **Objectif** : Gérer les erreurs pour toutes les commandes.
+- **Étapes** :
+  ☐ Implémenter une fonction `handle_error` qui gère les erreurs pour toutes les commandes.
+  ☐ Tester la gestion des erreurs dans `cd`, `pwd`, `ls`, et `echo`.
+  
+- `Learning Focus` : 
+  - Comprendre la gestion des erreurs en Rust (Result et Option).
+  - Implémenter une gestion d'erreurs centralisée.
+
+- **Ressources** :
+  - [Rust Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+
+---
+
+@Kendi  
+**Tâche 2 : Ajouter la commande `exit` et la gestion de la sortie du shell**
+- **Objectif** : Ajouter la commande `exit` pour fermer proprement le shell.
+- **Étapes** :
+  1. Implémenter la commande `exit` qui arrête le shell.
+  2. Tester le bon fonctionnement de la commande `exit` pour quitter le programme proprement.
+
+- `Learning Focus` : 
+  - Gérer l'arrêt du programme en Rust.
+  - Manipuler les processus et l'arrêt du programme.
+
+- **Ressources** :
+  - [Rust Process management](https://doc.rust-lang.org/std/process/index.html)
+
+---
+
+@Gaby 
+**Tâche 3 : Implémenter la commande `ls` avec des options simples (`-l`, `-a`)**
+- **Objectif** : Ajouter des options pour la commande `ls`.
+- **Étapes** :
+  ☐ Ajouter une option pour lister les fichiers avec détails (`-l`).
+  ☐ Ajouter une option pour inclure les fichiers cachés (`-a`).
+  ☐ Tester les deux options dans des cas différents.
+
+- `Learning Focus` : 
+  - Implémenter des options de ligne de commande dans un shell.
+  - Apprendre à utiliser les flags dans les commandes.
+
+- **Ressources** :
+  - [Rust CLI Argument Parsing](https://docs.rs/clap/latest/clap/)
+
+### `Sprint 3 : Implémentation des scripts et amélioration des commandes`
+
+#### `Objectif :` Permettre l'exécution de scripts et étendre la prise en charge des commandes avancées.
+
+@Babs 
+**Tâche 1 : Ajouter la fonctionnalité d'exécution de scripts à partir de fichiers**
+- **Objectif** : Permettre l'exécution de commandes dans des scripts.
+- **Étapes** :
+  ☐ Implémenter un parser de script qui lit les commandes d'un fichier.
+  ☐ Ajouter une fonction qui exécute chaque commande lue dans le script.
+  
+- `Learning Focus` : 
+  - Étudier l'interprétation des scripts dans un shell.
+  - Apprendre à travailler avec des fichiers en Rust.
+
+- **Ressources** :
+  - [Rust File Handling](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)
+  - [Rust Shell Scripting](https://learnxinyminutes.com/docs/rust/)
+
+---
+
+@Kendi
+**Tâche 2 : Ajouter des vérifications avant de changer de répertoire (`cd`)**
+- **Objectif** : Vérifier si le répertoire existe avant d'essayer de changer de répertoire.
+- **Étapes** :
+  ☐ Vérifier si le répertoire spécifié dans `cd` existe.
+  ☐ Si le répertoire n'existe pas, afficher un message d'erreur.
+
+- `Learning Focus` : 
+  - Apprendre à manipuler les chemins en Rust.
+  - Vérifier l'existence des fichiers et répertoires avant d'agir.
+
+- **Ressources** :
+  - [Rust Path and Directory Manipulation](https://doc.rust-lang.org/std/path/)
+
+---
+
+@Gaby  
+**Tâche 3 : Ajouter la commande `rm` et gérer la suppression des fichiers**
+- **Objectif** : Implémenter la commande `rm` pour supprimer des fichiers et répertoires.
+- **Étapes** :
+  ☐ Créer une fonction pour supprimer des fichiers ou répertoires.
+  ☐ Implémenter un flag pour supprimer un répertoire de manière récursive.
+  ☐ Tester la commande avec différents types de fichiers.
+
+- `Learning Focus` : 
+  - Manipuler les fichiers et les répertoires en Rust.
+  - Comprendre la suppression de fichiers en toute sécurité.
+
+- **Ressources** :
+  - [Rust std::fs documentation](https://doc.rust-lang.org/std/fs/)
+
+### `Sprint 4 : Job Control et Gestion des Signaux`
+
+#### `Objectif :` Ajouter des fonctionnalités avancées de gestion des jobs et des signaux.
+
+@Babs
+**Tâche 1 : Implémenter la gestion des signaux (Ctrl+C, Ctrl+Z)**
+- **Objectif** : Ajouter le support des signaux pour la gestion des processus.
+- **Étapes** :
+  ☐ Implémenter la gestion des signaux `SIGINT` (Ctrl+C) pour arrêter un processus.
+  ☐ Implémenter la gestion du signal `SIGTSTP` (Ctrl+Z) pour suspendre un processus.
+
+- `Learning Focus` : 
+  - Apprendre la gestion des signaux en Rust.
+  - Gérer l’interruption et la suspension des processus.
+
+- **Ressources** :
+  - [Rust Signals Handling](https://doc.rust-lang.org/std/process/index.html)
+
+@Kendi 
+**Tâche 2 : Implémenter la commande `bg`, `fg` et `jobs`**
+- **Objectif** : Ajouter des commandes pour gérer les processus en arrière-plan et au premier plan.
+- **Étapes** :
+  ☐ Implémenter la commande `bg` pour envoyer un processus en arrière-plan.
+  ☐ Implémenter la commande `fg` pour ramener un processus en avant-plan.
+  ☐ Implémenter la commande `
+
+jobs` pour lister les processus en arrière-plan.
+
+- `Learning Focus` : 
+  - Comprendre la gestion des processus en Rust.
+  - Implémenter un gestionnaire de jobs dans un shell.
+
+- **Ressources** :
+  - [Rust Process Control](https://doc.rust-lang.org/std/process/)
+
+@Gaby
+**Tâche 3 : Tester la gestion des processus**
+- **Objectif** : Tester toutes les commandes avancées avec des processus en arrière-plan.
+- **Étapes** :
+  ☐ Tester les commandes `bg`, `fg`, et `jobs` dans différents scénarios.
+  ☐ Vérifier la bonne gestion des processus et des signaux.
+
+- `Learning Focus` : 
+  - Tester l'exécution de processus en arrière-plan et leur interaction avec le shell.
+
+- **Ressources** :
+  - [Rust Job Control](https://www.gnu.org/software/bash/manual/bashref.html#Job-Control)
+
+--- 
+
+===============================================================================
+
+### Babs : Fondamentaux du Shell et Parsing
     - Conception de la structure de base du projet
     - Implémentation du mécanisme de prompt et de lecture des commandes
     - Développement du parseur de commandes

@@ -77,21 +77,4 @@
         - `parse-cli`: Command-line argument parsing
 
 
-    ### Suggested Project Structure
-    ```
-    0-shell/
-    ├── Cargo.toml
-    ├── src/
-    │   ├── main.rs         # Entry point
-    │   ├── shell.rs        # Core shell logic
-    │   ├── commands/       # Individual command implementations
-    │   │   ├── mod.rs
-    │   │   ├── echo.rs
-    │   │   ├── cd.rs
-    │   │   └── ...
-    │   ├── parser/         # Command and script parsing
-    │   ├── job_control/    # Job management
-    │   └── utils/          # Helper utilities
-    └── scripts/            # Shell scripts
-        └── create-dir.sh
-    ```
+   
