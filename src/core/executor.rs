@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, echo::echo, ls::ls, pwd::get_current_directory};
+use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, echo::echo,clear::clear, ls::ls, pwd::get_current_directory};
 
 use super::interpreter::Command;
 use anyhow::Result;
@@ -29,7 +29,10 @@ impl Executor {
                     Err(anyhow::anyhow!("Invalid variable assignment"))
                 }
             }
-
+            "clear" => {
+                clear();
+                Ok(())
+            },
             "pwd" => {
                 match get_current_directory() {
                     Ok(dir) => {
