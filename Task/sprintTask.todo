@@ -38,9 +38,9 @@
 - **Objectif** : Implémenter des commandes de base.
 - **Étapes** :
   ✔ Créer la commande `echo` pour afficher un texte. @done(24-12-03 22:53)
-  ☐ Créer la commande `ls` pour lister les fichiers du répertoire actuel.
+  ✔ Créer la commande `ls` pour lister les fichiers du répertoire actuel. @done(24-12-04 03:55)
   ✔ Implémenter `cat` pour afficher le contenu des fichiers. @done(24-12-04 02:29)
-  ☐ Tester chaque commande.
+  ✔ Tester chaque commande. @done(24-12-04 03:55)
 
 - `Learning Focus` : 
   - Apprendre à manipuler les entrées/sorties (I/O) en Rust.
@@ -179,9 +179,7 @@
 - **Étapes** :
   ☐ Implémenter la commande `bg` pour envoyer un processus en arrière-plan.
   ☐ Implémenter la commande `fg` pour ramener un processus en avant-plan.
-  ☐ Implémenter la commande `
-
-jobs` pour lister les processus en arrière-plan.
+  ☐ Implémenter la commande `jobs` pour lister les processus en arrière-plan.
 
 - `Learning Focus` : 
   - Comprendre la gestion des processus en Rust.
