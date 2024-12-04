@@ -19,7 +19,7 @@ impl Interpreter {
         if let Some(eq_pos) = input.find('=') {
             let (var_name, var_value) = input.split_at(eq_pos);
             let var_name = var_name.trim();
-            let var_value = var_value[1..].trim();
+            let var_value = var_value[1..].trim().trim_matches('"');
 
             if !var_value.is_empty() {
                 return Ok(Command {
@@ -31,7 +31,9 @@ impl Interpreter {
 
         let mut parts = input.split_whitespace();
         let name = parts.next().unwrap_or("").to_string();
-        let args = parts.map(String::from).collect::<Vec<String>>();
+         let args = parts
+        .map(|arg| arg.trim_matches('"').to_string())
+        .collect::<Vec<String>>();
 
         Ok(Command { name, args })
     }
