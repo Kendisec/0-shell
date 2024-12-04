@@ -8,10 +8,10 @@ pub fn echo(args: Vec<String>, variables: &HashMap<String, String>) {
         return;
     }
 
-    let mut expanded_args = Vec::new();
+    let mut filtre_arg = Vec::new();
     for arg in args {
-        expanded_args.push(handle_variables(&arg, variables));
+        filtre_arg.push(handle_variables(&arg, variables));
     }
 
-    println!("{}", expanded_args.join(" "));
+    println!("{}", filtre_arg.join(" "));
 }
