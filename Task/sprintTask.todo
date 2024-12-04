@@ -39,7 +39,7 @@
 - **Étapes** :
   ✔ Créer la commande `echo` pour afficher un texte. @done(24-12-03 22:53)
   ☐ Créer la commande `ls` pour lister les fichiers du répertoire actuel.
-  ☐ Implémenter `cat` pour afficher le contenu des fichiers.
+  ✔ Implémenter `cat` pour afficher le contenu des fichiers. @done(24-12-04 02:29)
   ☐ Tester chaque commande.
 
 - `Learning Focus` : 

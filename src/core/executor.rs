@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::commands::{cat::*, echo::echo};
+use crate::commands::{cat::*, echo::echo, ls::ls};
 
 use super::interpreter::Command;
 use anyhow::Result;
@@ -17,7 +17,8 @@ impl Executor {
             "" => Ok(()), // Empty command
             "exit" => Ok(()),
             "echo" => Ok(echo(command.args, variables)),
-            "cat" => cat(command.args).map_err(|e| anyhow::anyhow!(e.to_string())),
+            "cat" => cat(command.args).map_err(anyhow::Error::from),
+            "ls" => ls(command.args).map_err(anyhow::Error::from),
             "set_variable" => {
                 if command.args.len() == 2 {
                     let var_name = &command.args[0];
