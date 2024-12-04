@@ -21,9 +21,9 @@
 **Tâche 2 : Implémenter la commande `cd` et `pwd`**
 - **Objectif** : Ajouter les commandes de navigation dans le système de fichiers.
 - **Étapes** :
-  ☐ Créer une fonction pour `cd` qui change de répertoire.
-  ☐ Créer une fonction pour `pwd` qui affiche le répertoire courant.
-  ☐ Tester les deux commandes.
+  ✔ Créer une fonction pour `cd` qui change de répertoire. @done(24-12-04 12:26)
+  ✔ Créer une fonction pour `pwd` qui affiche le répertoire courant. @done(24-12-04 12:26)
+  ✔ Tester les deux commandes. @done(24-12-04 12:26)
 
 - `Learning Focus` : 
   - Manipuler les répertoires dans Rust.
