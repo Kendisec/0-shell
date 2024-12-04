@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use super::{error, executor, interpreter, prompt};
 pub use prompt::Prompt;
 pub use interpreter::Interpreter;
@@ -9,6 +11,7 @@ pub struct Shell {
     prompt: Prompt,
     interpreter: Interpreter,
     executor: Executor,
+    variables: HashMap<String, String>
 }
 
 impl Shell {
@@ -17,7 +20,16 @@ impl Shell {
             prompt: Prompt::new(),
             interpreter: Interpreter::new(),
             executor: Executor::new(),
+            variables: HashMap::new(),
         }
+    }
+
+    pub fn set_variable(&mut self, name: String, value: String) {
+        self.variables.insert(name, value);
+    }
+
+    pub fn get_variable(&self, name: &str) -> Option<&String> {
+        self.variables.get(name)
     }
 
     pub fn run(&mut self) -> anyhow::Result<()> {
@@ -28,8 +40,8 @@ impl Shell {
             if input.trim() == "exit" {
                 break;
             }
-    
-            match self.interpreter.parse(&input).and_then(|cmd| self.executor.execute(cmd)) {
+            
+            match self.interpreter.parse(&input).and_then(|cmd| self.executor.execute(cmd, &mut self.variables)) {
                 Ok(_) => (),
                 Err(e) => eprintln!("{}", e), 
             }

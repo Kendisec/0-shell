@@ -34,7 +34,7 @@ Example1
 Directory exist
 ```
 
-☐  Can you confirm that the directory was not created and the script shows the message "Directory exist" because a directory with that name already exists like in the example above?
+✔  Can you confirm that the directory was not created and the script shows the message "Directory exist" because a directory with that name already exists like in the example above? @done(24-12-04 01:30)
 
 -----> Try to run the command `"NAME="Alex""` followed by the command `"echo "Hello $NAME!""` in the `0-shell` interpreter.
 
