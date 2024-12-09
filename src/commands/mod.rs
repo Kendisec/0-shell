@@ -5,3 +5,5 @@ pub mod cat;
 pub mod ls;
 pub mod mkdir;
 pub mod bg;
+pub mod clear;
+pub mod autocomplete;

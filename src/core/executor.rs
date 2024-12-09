@@ -1,13 +1,6 @@
 use std::collections::HashMap;
 
-use crate::commands::{
-    cat::cat,
-    cd::{change_directory, get_home_dir},
-    echo::echo,
-    ls::ls,
-    mkdir::create_directory,
-    pwd::get_current_directory,
-};
+use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, echo::echo, ls::ls, mkdir::create_directory, pwd::get_current_directory};
 
 use super::interpreter::Command;
 use anyhow::Result;
@@ -36,13 +29,18 @@ impl Executor {
                     Err(anyhow::anyhow!("Invalid variable assignment"))
                 }
             }
-
-            "pwd" => match get_current_directory() {
-                Ok(dir) => {
-                    println!("{}", dir);
-                    Ok(())
+            "clear" => {
+                clear();
+                Ok(())
+            },
+            "pwd" => {
+                match get_current_directory() {
+                    Ok(dir) => {
+                        println!("{}", dir);
+                        Ok(())
+                    }
+                    Err(err) => Err(anyhow::anyhow!("Error executing pwd: {}", err)),
                 }
-                Err(err) => Err(anyhow::anyhow!("Error executing pwd: {}", err)),
             },
             "cd" => {
                 // Ensure a path is provided as an argument
@@ -87,3 +85,4 @@ impl Executor {
         }
     }
 }
+
