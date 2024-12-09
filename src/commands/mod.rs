@@ -6,3 +6,4 @@ pub mod ls;
 pub mod rm;
 pub mod autocomplete;
 pub mod clear;
+pub mod cp;
