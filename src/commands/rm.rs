@@ -59,3 +59,5 @@ fn remove_directory_recursive(path: &Path) -> io::Result<()> {
     println!("Répertoire supprimé : {}", path.display());
     Ok(())
 }
+
+
