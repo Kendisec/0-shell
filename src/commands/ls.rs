@@ -176,7 +176,7 @@ fn display_permissions(permissions: fs::Permissions, is_dir: bool) -> String {
     result.push(if mode & 0o002 != 0 { 'w' } else { '-' });
     result.push(if mode & 0o001 != 0 { 'x' } else { '-' });
 
-    result
+    result  
 }
 fn print_file_name(dir: &str, file_name: &str, append_slash: bool) -> io::Result<()> {
     let path = Path::new(dir).join(file_name);
