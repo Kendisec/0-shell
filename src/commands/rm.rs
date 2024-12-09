@@ -1,4 +1,4 @@
-use std::fs;
+/* use std::fs;
 use std::io;
 use std::path::Path;
 
@@ -59,3 +59,4 @@ fn remove_directory_recursive(path: &Path) -> io::Result<()> {
     println!("Répertoire supprimé : {}", path.display());
     Ok(())
 }
+ */
