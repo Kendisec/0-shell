@@ -21,9 +21,9 @@
 **Tâche 2 : Implémenter la commande `cd` et `pwd`**
 - **Objectif** : Ajouter les commandes de navigation dans le système de fichiers.
 - **Étapes** :
-  ☐ Créer une fonction pour `cd` qui change de répertoire.
-  ☐ Créer une fonction pour `pwd` qui affiche le répertoire courant.
-  ☐ Tester les deux commandes.
+  ✔ Créer une fonction pour `cd` qui change de répertoire. @done(24-12-04 12:26)
+  ✔ Créer une fonction pour `pwd` qui affiche le répertoire courant. @done(24-12-04 12:26)
+  ✔ Tester les deux commandes. @done(24-12-04 12:26)
 
 - `Learning Focus` : 
   - Manipuler les répertoires dans Rust.
@@ -93,7 +93,7 @@
 - **Objectif** : Ajouter des options pour la commande `ls`.
 - **Étapes** :
   ☐ Ajouter une option pour lister les fichiers avec détails (`-l`).
-  ☐ Ajouter une option pour inclure les fichiers cachés (`-a`).
+  ✔ Ajouter une option pour inclure les fichiers cachés (`-a`). @done(24-12-09 15:21)
   ☐ Tester les deux options dans des cas différents.
 
 - `Learning Focus` : 
@@ -144,9 +144,9 @@
 **Tâche 3 : Ajouter la commande `rm` et gérer la suppression des fichiers**
 - **Objectif** : Implémenter la commande `rm` pour supprimer des fichiers et répertoires.
 - **Étapes** :
-  ☐ Créer une fonction pour supprimer des fichiers ou répertoires.
-  ☐ Implémenter un flag pour supprimer un répertoire de manière récursive.
-  ☐ Tester la commande avec différents types de fichiers.
+  ✔ Créer une fonction pour supprimer des fichiers ou répertoires. @done(24-12-09 15:21)
+  ✔ Implémenter un flag pour supprimer un répertoire de manière récursive. @done(24-12-09 15:21)
+  ✔ Tester la commande avec différents types de fichiers. @done(24-12-09 15:21)
 
 - `Learning Focus` : 
   - Manipuler les fichiers et les répertoires en Rust.

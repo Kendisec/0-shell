@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::commands::{cat::*, echo::echo, ls::ls};
+use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, echo::echo, ls::ls, pwd::get_current_directory, rm::rm};
 
 use super::interpreter::Command;
 use anyhow::Result;
@@ -15,10 +15,11 @@ impl Executor {
     pub fn execute(&self, command: Command, variables: &mut HashMap<String, String>) -> Result<()> {
         match command.name.as_str() {
             "" => Ok(()), // Empty command
-            "exit" => Ok(()),
+            "exit" => Ok(()), // Exit command
             "echo" => Ok(echo(command.args, variables)),
             "cat" => cat(command.args).map_err(anyhow::Error::from),
             "ls" => ls(command.args).map_err(anyhow::Error::from),
+            "rm" => rm(command.args).map_err(anyhow::Error::from),
             "set_variable" => {
                 if command.args.len() == 2 {
                     let var_name = &command.args[0];
@@ -29,7 +30,39 @@ impl Executor {
                     Err(anyhow::anyhow!("Invalid variable assignment"))
                 }
             }
-            _ => Err(anyhow::anyhow!("Command '{}' not found", command.name)),
+            "clear" => {
+                clear();
+                Ok(())
+            },
+            "pwd" => {
+                match get_current_directory() {
+                    Ok(dir) => {
+                        println!("{}", dir);
+                        Ok(())
+                    }
+                    Err(err) => Err(anyhow::anyhow!("Error executing pwd: {}", err)),
+                }
+            }
+            "cd" => {
+                // Ensure a path is provided as an argument
+                if let Some(path) = command.args.get(0) {
+                    match change_directory(path) {
+                        Ok(()) => Ok(()),
+                        Err(_err) => Err(anyhow::anyhow!("cd: no such file or directory: {}", path)),
+                    }
+                } else {
+                    let home = get_home_dir();
+                    if let Some(path) = home{
+                        match change_directory(&path) {
+                            Ok(()) => Ok(()),
+                            Err(_err) => Err(anyhow::anyhow!("cd: no such file or directory {}", path)),
+                        }
+                    }else{
+                        Err(anyhow::anyhow!("cd: no such file or directory "))
+                    }
+                }
+            }
+            cmd => Err(anyhow::anyhow!("Command '{}' not found", cmd)),
         }
     }
 }
