@@ -17,3 +17,4 @@ pub fn echo(args: Vec<String>, variables: &HashMap<String, String>) {
 
     println!("{}", filtre_arg.join(" "));
 }
+ 
