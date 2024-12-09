@@ -17,7 +17,7 @@ pub fn ls(args: Vec<String>) -> io::Result<()> {
         .iter()
         .find(|arg| !arg.starts_with('-'))
         .unwrap_or(&binding)
-        .to_string(); 
+        .to_string();
 
     let file_names = get_file_names(&dir, options.show_hidden)?;
 
@@ -53,7 +53,18 @@ fn get_file_names(dir: &str, show_hidden: bool) -> io::Result<Vec<String>> {
         })
         .collect();
 
-    file_names.sort();
+    if show_hidden {
+        file_names.push(".".to_string());
+        file_names.push("..".to_string());
+    }
+
+    file_names.sort_by(|a, b| {
+        let a_trimmed = a.trim_start_matches('.');
+        let b_trimmed = b.trim_start_matches('.');
+        a_trimmed.to_lowercase().cmp(&b_trimmed.to_lowercase())
+    });
+    
+
     Ok(file_names)
 }
 
