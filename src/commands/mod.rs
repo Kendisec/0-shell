@@ -7,3 +7,4 @@ pub mod mkdir;
 pub mod bg;
 pub mod clear;
 pub mod autocomplete;
+pub mod mv;

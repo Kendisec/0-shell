@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, echo::echo, ls::ls, mkdir::create_directory, pwd::get_current_directory};
+use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, echo::echo, ls::ls, mkdir::create_directory, pwd::get_current_directory, mv::mv};
 
 use super::interpreter::Command;
 use anyhow::Result;
@@ -79,6 +79,23 @@ impl Executor {
                     Ok(())
                 } else {
                     Err(anyhow::anyhow!("mkdir: missing operand"))
+                }
+            }
+            "mv" => {
+                if let Some(paths) = command.args.get(..) {
+                    // let command = Command {args : paths.to_vec(), name: "test".to_string() };
+                    let file_destination = paths[paths.len()-1].clone();
+                    for (i,path) in paths.iter().enumerate(){
+                        if i < paths.len()-1{
+                            match mv(path, &file_destination) {
+                                Ok(_) => println!("Files moved successfully."),
+                                Err(err) => eprintln!("Error: {}", err),
+                            }
+                        }
+                    }
+                        Ok(())
+                } else {
+                    Err(anyhow::anyhow!("mv: missing operand"))
                 }
             }
             cmd => Err(anyhow::anyhow!("Command '{}' not found", cmd)),
