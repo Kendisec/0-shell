@@ -128,8 +128,8 @@
 **Tâche 2 : Ajouter des vérifications avant de changer de répertoire (`cd`)**
 - **Objectif** : Vérifier si le répertoire existe avant d'essayer de changer de répertoire.
 - **Étapes** :
-  ☐ Vérifier si le répertoire spécifié dans `cd` existe.
-  ☐ Si le répertoire n'existe pas, afficher un message d'erreur.
+  ✔ Vérifier si le répertoire spécifié dans `cd` existe. @done(24-12-09 11:27)
+  ✔ Si le répertoire n'existe pas, afficher un message d'erreur. @done(24-12-09 11:27)
 
 - `Learning Focus` : 
   - Apprendre à manipuler les chemins en Rust.
