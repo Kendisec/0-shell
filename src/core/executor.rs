@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, echo::echo, ls::ls, mkdir::create_directory, pwd::get_current_directory, mv::mv};
+use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, cp::cp, echo::echo, ls::ls, mkdir::create_directory, mv::mv, pwd::get_current_directory, rm::rm};
 
 use super::interpreter::Command;
 use anyhow::Result;
@@ -19,6 +19,8 @@ impl Executor {
             "echo" => Ok(echo(command.args, variables)),
             "cat" => cat(command.args).map_err(anyhow::Error::from),
             "ls" => ls(command.args).map_err(anyhow::Error::from),
+            "rm" => rm(command.args).map_err(anyhow::Error::from),
+            "cp" => cp(command.args).map_err(anyhow::Error::from),
             "set_variable" => {
                 if command.args.len() == 2 {
                     let var_name = &command.args[0];
