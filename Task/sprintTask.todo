@@ -93,7 +93,7 @@
 - **Objectif** : Ajouter des options pour la commande `ls`.
 - **Étapes** :
   ☐ Ajouter une option pour lister les fichiers avec détails (`-l`).
-  ☐ Ajouter une option pour inclure les fichiers cachés (`-a`).
+  ✔ Ajouter une option pour inclure les fichiers cachés (`-a`). @done(24-12-09 15:21)
   ☐ Tester les deux options dans des cas différents.
 
 - `Learning Focus` : 
@@ -128,8 +128,8 @@
 **Tâche 2 : Ajouter des vérifications avant de changer de répertoire (`cd`)**
 - **Objectif** : Vérifier si le répertoire existe avant d'essayer de changer de répertoire.
 - **Étapes** :
-  ☐ Vérifier si le répertoire spécifié dans `cd` existe.
-  ☐ Si le répertoire n'existe pas, afficher un message d'erreur.
+  ✔ Vérifier si le répertoire spécifié dans `cd` existe. @done(24-12-09 11:27)
+  ✔ Si le répertoire n'existe pas, afficher un message d'erreur. @done(24-12-09 11:27)
 
 - `Learning Focus` : 
   - Apprendre à manipuler les chemins en Rust.
@@ -144,9 +144,9 @@
 **Tâche 3 : Ajouter la commande `rm` et gérer la suppression des fichiers**
 - **Objectif** : Implémenter la commande `rm` pour supprimer des fichiers et répertoires.
 - **Étapes** :
-  ☐ Créer une fonction pour supprimer des fichiers ou répertoires.
-  ☐ Implémenter un flag pour supprimer un répertoire de manière récursive.
-  ☐ Tester la commande avec différents types de fichiers.
+  ✔ Créer une fonction pour supprimer des fichiers ou répertoires. @done(24-12-09 15:21)
+  ✔ Implémenter un flag pour supprimer un répertoire de manière récursive. @done(24-12-09 15:21)
+  ✔ Tester la commande avec différents types de fichiers. @done(24-12-09 15:21)
 
 - `Learning Focus` : 
   - Manipuler les fichiers et les répertoires en Rust.
@@ -256,3 +256,5 @@
     - D'acquérir une compréhension profonde d'un aspect du projet
     - De contribuer significativement à l'ensemble du projet
    
+
+    

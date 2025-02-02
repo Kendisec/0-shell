@@ -10,8 +10,8 @@ pub fn get_current_directory() -> Result<String, String> {
 mod tests {
     use super::*;
     use std::env;
-    use std::fs;
-    use std::path::Path;
+    
+    
 
     #[test]
     fn test_get_current_directory() {
