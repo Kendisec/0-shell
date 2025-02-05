@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, cp::cp, echo::echo, ls::ls, mkdir::create_directory, mv::mv, pwd::get_current_directory, rm::rm};
+use crate::commands::{cat::cat, cd::{change_directory, get_home_dir}, clear::clear, cp::cp, echo::echo, help, ls::ls, mkdir::create_directory, mv::mv, pwd::get_current_directory, rm::rm, touch::touch};
 
 use super::interpreter::Command;
 use anyhow::Result;
@@ -19,6 +19,7 @@ impl Executor {
             "echo" => Ok(echo(command.args, variables)),
             "cat" => cat(command.args).map_err(anyhow::Error::from),
             "ls" => ls(command.args).map_err(anyhow::Error::from),
+            "touch" => touch(command.args).map_err(anyhow::Error::from),
             "rm" => rm(command.args).map_err(anyhow::Error::from),
             "cp" => cp(command.args).map_err(anyhow::Error::from),
             "set_variable" => {
@@ -45,7 +46,6 @@ impl Executor {
                 }
             },
             "cd" => {
-                // Ensure a path is provided as an argument
                 if let Some(path) = command.args.get(0) {
                     match change_directory(path) {
                         Ok(()) => Ok(()),
@@ -99,6 +99,10 @@ impl Executor {
                 } else {
                     Err(anyhow::anyhow!("mv: missing operand"))
                 }
+            }
+            "help" => {
+                help::help();
+                Ok(())
             }
             cmd => Err(anyhow::anyhow!("Command '{}' not found", cmd)),
         }

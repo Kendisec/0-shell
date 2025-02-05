@@ -10,3 +10,5 @@ pub mod bg;
 pub mod clear;
 pub mod autocomplete;
 pub mod mv;
+pub mod help;
+pub mod touch;

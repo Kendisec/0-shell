@@ -76,8 +76,8 @@
 **Tâche 2 : Ajouter la commande `exit` et la gestion de la sortie du shell**
 - **Objectif** : Ajouter la commande `exit` pour fermer proprement le shell.
 - **Étapes** :
-  1. Implémenter la commande `exit` qui arrête le shell.
-  2. Tester le bon fonctionnement de la commande `exit` pour quitter le programme proprement.
+  ✔ 1. Implémenter la commande `exit` qui arrête le shell. @done(25-02-03 11:55)
+  ✔ 2. Tester le bon fonctionnement de la commande `exit` pour quitter le programme proprement. @done(25-02-03 11:55)
 
 - `Learning Focus` : 
   - Gérer l'arrêt du programme en Rust.

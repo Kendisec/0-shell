@@ -1,6 +1,11 @@
 use shell::core::shell::Shell;
 
-fn main() -> anyhow::Result<()> {
+use anyhow::Result;
+
+fn main() -> Result<()> {
     let mut shell = Shell::new();
-    shell.run()
+ 
+    shell.run()?;
+
+    Ok(())
 }
